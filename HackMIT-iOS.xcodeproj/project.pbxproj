@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD301232D47C800992AAB /* AppDelegate.swift */; };
-		E84FD304232D47C800992AAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD303232D47C800992AAB /* ViewController.swift */; };
 		E84FD307232D47C800992AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84FD305232D47C800992AAB /* Main.storyboard */; };
 		E84FD30A232D47C800992AAB /* HackMIT_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E84FD308232D47C800992AAB /* HackMIT_iOS.xcdatamodeld */; };
 		E84FD30C232D47C900992AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84FD30B232D47C900992AAB /* Assets.xcassets */; };
 		E84FD30F232D47C900992AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84FD30D232D47C900992AAB /* LaunchScreen.storyboard */; };
+		E84FD31E232D6D4D00992AAB /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD31D232D6D4D00992AAB /* DashboardViewController.swift */; };
+		E84FD320232D6D5600992AAB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD31F232D6D5600992AAB /* ProfileViewController.swift */; };
+		E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD321232D6D6800992AAB /* MapViewController.swift */; };
+		E84FD324232D6D6E00992AAB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD323232D6D6E00992AAB /* SettingsViewController.swift */; };
+		E84FD326232D6DE100992AAB /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD325232D6DE100992AAB /* ContainerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E84FD2FE232D47C800992AAB /* HackMIT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackMIT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84FD301232D47C800992AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E84FD303232D47C800992AAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E84FD306232D47C800992AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E84FD309232D47C800992AAB /* HackMIT_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackMIT_iOS.xcdatamodel; sourceTree = "<group>"; };
 		E84FD30B232D47C900992AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E84FD30E232D47C900992AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E84FD310232D47CA00992AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E84FD31D232D6D4D00992AAB /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		E84FD31F232D6D5600992AAB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E84FD321232D6D6800992AAB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E84FD323232D6D6E00992AAB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E84FD325232D6DE100992AAB /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		E84FD300232D47C800992AAB /* HackMIT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E84FD31A232D54AB00992AAB /* Models */,
+				E84FD319232D54A500992AAB /* Services */,
+				E84FD318232D549200992AAB /* Views */,
+				E84FD317232D548B00992AAB /* ViewControllers */,
+				E84FD316232D547700992AAB /* Storyboards */,
 				E84FD301232D47C800992AAB /* AppDelegate.swift */,
-				E84FD303232D47C800992AAB /* ViewController.swift */,
-				E84FD305232D47C800992AAB /* Main.storyboard */,
 				E84FD30B232D47C900992AAB /* Assets.xcassets */,
-				E84FD30D232D47C900992AAB /* LaunchScreen.storyboard */,
 				E84FD310232D47CA00992AAB /* Info.plist */,
 				E84FD308232D47C800992AAB /* HackMIT_iOS.xcdatamodeld */,
 			);
 			path = "HackMIT-iOS";
+			sourceTree = "<group>";
+		};
+		E84FD316232D547700992AAB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E84FD305232D47C800992AAB /* Main.storyboard */,
+				E84FD30D232D47C900992AAB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E84FD317232D548B00992AAB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E84FD31D232D6D4D00992AAB /* DashboardViewController.swift */,
+				E84FD31F232D6D5600992AAB /* ProfileViewController.swift */,
+				E84FD321232D6D6800992AAB /* MapViewController.swift */,
+				E84FD323232D6D6E00992AAB /* SettingsViewController.swift */,
+				E84FD325232D6DE100992AAB /* ContainerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E84FD318232D549200992AAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E84FD319232D54A500992AAB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E84FD31A232D54AB00992AAB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +191,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84FD30A232D47C800992AAB /* HackMIT_iOS.xcdatamodeld in Sources */,
-				E84FD304232D47C800992AAB /* ViewController.swift in Sources */,
+				E84FD31E232D6D4D00992AAB /* DashboardViewController.swift in Sources */,
+				E84FD326232D6DE100992AAB /* ContainerViewController.swift in Sources */,
+				E84FD320232D6D5600992AAB /* ProfileViewController.swift in Sources */,
+				E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */,
 				E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */,
+				E84FD324232D6D6E00992AAB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

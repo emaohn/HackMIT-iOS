@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Container View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ContainerViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +46,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="leadingConstraint" destination="Aub-d7-Wv8" id="xdJ-uo-whf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +57,7 @@
         <!--Dashboard-->
         <scene sceneID="8DK-Uc-t5y">
             <objects>
-                <viewController id="nWf-Ja-pjb" sceneMemberID="viewController">
+                <viewController id="nWf-Ja-pjb" customClass="DashboardViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBD-RT-OP6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +80,7 @@
         <scene sceneID="cQL-Wo-qPC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qM-u9-awU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="4JV-Ud-adT" sceneMemberID="viewController">
+                <viewController id="4JV-Ud-adT" customClass="SettingsViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Axh-qh-PUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,7 +97,7 @@
         <!--Profile-->
         <scene sceneID="7I9-N1-TD0">
             <objects>
-                <viewController id="r2B-uv-WpQ" sceneMemberID="viewController">
+                <viewController id="r2B-uv-WpQ" customClass="ProfileViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dcv-PB-edB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="724" y="1344"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="kd6-m9-uAa">
             <objects>
-                <viewController id="NZU-Hc-gDd" sceneMemberID="viewController">
+                <viewController id="NZU-Hc-gDd" customClass="MapViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tdh-O3-KzY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
