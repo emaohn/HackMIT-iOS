@@ -31,6 +31,8 @@
 		E84FD341232DE80000992AAB /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD340232DE80000992AAB /* TravelViewController.swift */; };
 		E84FD343232DE80A00992AAB /* EnergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD342232DE80A00992AAB /* EnergyViewController.swift */; };
 		E84FD347232E168C00992AAB /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD346232E168C00992AAB /* PointsViewController.swift */; };
+		E84FD34B232E25C400992AAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E84FD34A232E25C400992AAB /* GoogleService-Info.plist */; };
+		E84FD34D232E3D4200992AAB /* AddEnergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD34C232E3D4200992AAB /* AddEnergyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		E84FD340232DE80000992AAB /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		E84FD342232DE80A00992AAB /* EnergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyViewController.swift; sourceTree = "<group>"; };
 		E84FD346232E168C00992AAB /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		E84FD34A232E25C400992AAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E84FD34C232E3D4200992AAB /* AddEnergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEnergyViewController.swift; sourceTree = "<group>"; };
 		FE8F2019CC99C7A482787186 /* Pods_HackMIT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackMIT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,7 @@
 				E84FD337232DC96300992AAB /* light.png */,
 				E84FD335232DC91C00992AAB /* heart.png */,
 				E84FD30B232D47C900992AAB /* Assets.xcassets */,
+				E84FD34A232E25C400992AAB /* GoogleService-Info.plist */,
 				E84FD310232D47CA00992AAB /* Info.plist */,
 				E84FD308232D47C800992AAB /* HackMIT_iOS.xcdatamodeld */,
 			);
@@ -148,6 +153,7 @@
 				E84FD340232DE80000992AAB /* TravelViewController.swift */,
 				E84FD342232DE80A00992AAB /* EnergyViewController.swift */,
 				E84FD346232E168C00992AAB /* PointsViewController.swift */,
+				E84FD34C232E3D4200992AAB /* AddEnergyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				E84FD2FB232D47C800992AAB /* Frameworks */,
 				E84FD2FC232D47C800992AAB /* Resources */,
 				D05FE74F8BA9A422E10D2068 /* [CP] Embed Pods Frameworks */,
+				5963023AC3CAEEC0E883A7FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,6 +227,9 @@
 					E84FD2FD232D47C800992AAB = {
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
@@ -252,6 +262,7 @@
 			files = (
 				E84FD336232DC91C00992AAB /* heart.png in Resources */,
 				E84FD30F232D47C900992AAB /* LaunchScreen.storyboard in Resources */,
+				E84FD34B232E25C400992AAB /* GoogleService-Info.plist in Resources */,
 				E84FD30C232D47C900992AAB /* Assets.xcassets in Resources */,
 				E84FD338232DC96300992AAB /* light.png in Resources */,
 				E84FD33C232DC9A700992AAB /* car.png in Resources */,
@@ -263,6 +274,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5963023AC3CAEEC0E883A7FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HackMIT-iOS/Pods-HackMIT-iOS-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackMIT-iOS/Pods-HackMIT-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D05FE74F8BA9A422E10D2068 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,10 +300,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HackMIT-iOS/Pods-HackMIT-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -316,6 +353,7 @@
 				E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */,
 				E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */,
 				E84FD33F232DE7F300992AAB /* VolunteeringViewController.swift in Sources */,
+				E84FD34D232E3D4200992AAB /* AddEnergyViewController.swift in Sources */,
 				E84FD347232E168C00992AAB /* PointsViewController.swift in Sources */,
 				E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */,
 				E84FD334232DC6AE00992AAB /* DashboardTableViewCell.swift in Sources */,

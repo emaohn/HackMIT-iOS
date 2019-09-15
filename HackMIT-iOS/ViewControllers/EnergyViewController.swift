@@ -18,9 +18,10 @@ private class CubicLineSampleFillFormatter: IFillFormatter {
 class EnergyViewController: UIViewController {
     @IBOutlet weak var lineChartView: LineChartView!
     
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+         NotificationCenter.default.addObserver(self, selector: #selector(toggleAddEnergy), name: NSNotification.Name("ToggleAddEnergy"), object: nil)
         
         lineChartView.backgroundColor = .white
         
@@ -48,6 +49,8 @@ class EnergyViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UINavigationBar.appearance().tintColor = UIColor.tcOrange
+        
+        leadingConstraint.constant = -800
 
     }
     
@@ -61,6 +64,7 @@ class EnergyViewController: UIViewController {
         let set1 = LineChartDataSet(values: yVals1, label: "Energy")
         set1.mode = .cubicBezier
         set1.drawCirclesEnabled = false
+        
         set1.lineWidth = 5
         set1.circleRadius = 4
         set1.setCircleColor(.white)
@@ -80,5 +84,20 @@ class EnergyViewController: UIViewController {
     
     func updateChartData() {
         
+    }
+    @IBAction func addEnergyButton(_ sender: Any) {
+        toggleAddEnergy()
+    }
+    
+    @objc func toggleAddEnergy() {
+        if leadingConstraint.constant == -800 {
+            leadingConstraint.constant = -20
+            
+        } else {
+            leadingConstraint.constant = -800
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
