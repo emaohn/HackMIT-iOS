@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0A5FD3A6EFB257ABFDA29B0 /* Pods_HackMIT_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F2019CC99C7A482787186 /* Pods_HackMIT_iOS.framework */; };
 		E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD301232D47C800992AAB /* AppDelegate.swift */; };
 		E84FD307232D47C800992AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E84FD305232D47C800992AAB /* Main.storyboard */; };
 		E84FD30A232D47C800992AAB /* HackMIT_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E84FD308232D47C800992AAB /* HackMIT_iOS.xcdatamodeld */; };
@@ -26,9 +27,14 @@
 		E84FD338232DC96300992AAB /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = E84FD337232DC96300992AAB /* light.png */; };
 		E84FD33A232DC99000992AAB /* walk.png in Resources */ = {isa = PBXBuildFile; fileRef = E84FD339232DC99000992AAB /* walk.png */; };
 		E84FD33C232DC9A700992AAB /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = E84FD33B232DC9A700992AAB /* car.png */; };
+		E84FD33F232DE7F300992AAB /* VolunteeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD33E232DE7F300992AAB /* VolunteeringViewController.swift */; };
+		E84FD341232DE80000992AAB /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD340232DE80000992AAB /* TravelViewController.swift */; };
+		E84FD343232DE80A00992AAB /* EnergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD342232DE80A00992AAB /* EnergyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C8A0A10AF0F67C3EABC7CB39 /* Pods-HackMIT-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackMIT-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackMIT-iOS/Pods-HackMIT-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		D624B96ECA53A2A2EC81C4F4 /* Pods-HackMIT-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackMIT-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HackMIT-iOS/Pods-HackMIT-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E84FD2FE232D47C800992AAB /* HackMIT-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HackMIT-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84FD301232D47C800992AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E84FD306232D47C800992AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +57,10 @@
 		E84FD337232DC96300992AAB /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
 		E84FD339232DC99000992AAB /* walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk.png; sourceTree = "<group>"; };
 		E84FD33B232DC9A700992AAB /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		E84FD33E232DE7F300992AAB /* VolunteeringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteeringViewController.swift; sourceTree = "<group>"; };
+		E84FD340232DE80000992AAB /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
+		E84FD342232DE80A00992AAB /* EnergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyViewController.swift; sourceTree = "<group>"; };
+		FE8F2019CC99C7A482787186 /* Pods_HackMIT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackMIT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,18 +69,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84FD32C232DA3AD00992AAB /* HealthKit.framework in Frameworks */,
+				D0A5FD3A6EFB257ABFDA29B0 /* Pods_HackMIT_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C77723B98BD5487EEB773532 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D624B96ECA53A2A2EC81C4F4 /* Pods-HackMIT-iOS.debug.xcconfig */,
+				C8A0A10AF0F67C3EABC7CB39 /* Pods-HackMIT-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E84FD2F5232D47C800992AAB = {
 			isa = PBXGroup;
 			children = (
 				E84FD300232D47C800992AAB /* HackMIT-iOS */,
 				E84FD2FF232D47C800992AAB /* Products */,
 				E84FD32A232DA3AD00992AAB /* Frameworks */,
+				C77723B98BD5487EEB773532 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +142,9 @@
 				E84FD323232D6D6E00992AAB /* SettingsViewController.swift */,
 				E84FD325232D6DE100992AAB /* ContainerViewController.swift */,
 				E84FD327232D75D500992AAB /* SideMenuViewController.swift */,
+				E84FD33E232DE7F300992AAB /* VolunteeringViewController.swift */,
+				E84FD340232DE80000992AAB /* TravelViewController.swift */,
+				E84FD342232DE80A00992AAB /* EnergyViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				E84FD32B232DA3AD00992AAB /* HealthKit.framework */,
+				FE8F2019CC99C7A482787186 /* Pods_HackMIT_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E84FD313232D47CA00992AAB /* Build configuration list for PBXNativeTarget "HackMIT-iOS" */;
 			buildPhases = (
+				E42B1B04B553303C55284807 /* [CP] Check Pods Manifest.lock */,
 				E84FD2FA232D47C800992AAB /* Sources */,
 				E84FD2FB232D47C800992AAB /* Frameworks */,
 				E84FD2FC232D47C800992AAB /* Resources */,
+				D05FE74F8BA9A422E10D2068 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,6 +259,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D05FE74F8BA9A422E10D2068 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HackMIT-iOS/Pods-HackMIT-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HackMIT-iOS/Pods-HackMIT-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E42B1B04B553303C55284807 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackMIT-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E84FD2FA232D47C800992AAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -241,12 +307,15 @@
 				E84FD30A232D47C800992AAB /* HackMIT_iOS.xcdatamodeld in Sources */,
 				E84FD31E232D6D4D00992AAB /* DashboardViewController.swift in Sources */,
 				E84FD326232D6DE100992AAB /* ContainerViewController.swift in Sources */,
+				E84FD341232DE80000992AAB /* TravelViewController.swift in Sources */,
 				E84FD320232D6D5600992AAB /* ProfileViewController.swift in Sources */,
 				E84FD332232DAD0300992AAB /* HealthKitSetupAssistant.swift in Sources */,
 				E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */,
 				E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */,
+				E84FD33F232DE7F300992AAB /* VolunteeringViewController.swift in Sources */,
 				E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */,
 				E84FD334232DC6AE00992AAB /* DashboardTableViewCell.swift in Sources */,
+				E84FD343232DE80A00992AAB /* EnergyViewController.swift in Sources */,
 				E84FD324232D6D6E00992AAB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +460,7 @@
 		};
 		E84FD314232D47CA00992AAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D624B96ECA53A2A2EC81C4F4 /* Pods-HackMIT-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "HackMIT-iOS/HackMIT-iOS.entitlements";
@@ -411,6 +481,7 @@
 		};
 		E84FD315232D47CA00992AAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8A0A10AF0F67C3EABC7CB39 /* Pods-HackMIT-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "HackMIT-iOS/HackMIT-iOS.entitlements";

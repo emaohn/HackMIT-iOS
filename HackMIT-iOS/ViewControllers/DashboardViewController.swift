@@ -9,6 +9,7 @@
 import UIKit
 import CoreMotion
 import HealthKit
+import Charts
 
 class DashboardViewController: UIViewController {
 
