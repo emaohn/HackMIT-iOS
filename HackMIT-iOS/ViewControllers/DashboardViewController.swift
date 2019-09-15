@@ -14,7 +14,6 @@ import Charts
 class DashboardViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var statusLabel: UILabel!
     var driving = false;
     var driveTime = 0;
     let timer = Timer()
@@ -41,7 +40,6 @@ class DashboardViewController: UIViewController {
                 if(self.driving) {
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { (timer) in
                         self.driveTime += 1
-                        self.statusLabel.text = "\(self.driveTime)"
                     })
                 } else {
                     self.timer.invalidate()
@@ -191,6 +189,15 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0: self.performSegue(withIdentifier: "openEnergyBreakdown", sender: nil)
+        case 1: self.performSegue(withIdentifier: "openTravelBreakdown", sender: nil)
+        case 2: self.performSegue(withIdentifier: "openVolunteeringBreakdown", sender: nil)
+        default: break;
+        }
     }
     
 }

@@ -149,6 +149,7 @@
                             <constraint firstAttribute="trailing" secondItem="u0T-Io-kPz" secondAttribute="trailing" id="nkB-BY-uLj"/>
                             <constraint firstAttribute="bottom" secondItem="bOA-qR-eAD" secondAttribute="bottom" id="yYV-GU-2ws"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="s6d-f7-whr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" id="Qbv-jZ-yeA">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="y54-Ow-cN3">
@@ -175,7 +176,6 @@
         <!--Settings-->
         <scene sceneID="cQL-Wo-qPC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5qM-u9-awU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="4JV-Ud-adT" customClass="SettingsViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Axh-qh-PUJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="792"/>
@@ -185,6 +185,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="VKi-ZF-Oht"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qM-u9-awU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1233" y="1083"/>
         </scene>
@@ -392,18 +393,35 @@
         <!--Energy-->
         <scene sceneID="5Hr-QR-7i1">
             <objects>
-                <viewController id="Gja-Qg-phW" sceneMemberID="viewController">
+                <viewController id="Gja-Qg-phW" customClass="EnergyViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ycw-03-stN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="792"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIV-UK-4W8" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="8" y="96" width="359" height="350"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="BH2-FW-2zg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZIV-UK-4W8" firstAttribute="leading" secondItem="wxq-2c-cfG" secondAttribute="leading" constant="8" id="gLq-CR-GiW"/>
+                            <constraint firstItem="wxq-2c-cfG" firstAttribute="trailing" secondItem="ZIV-UK-4W8" secondAttribute="trailing" constant="8" id="hAB-FM-DvT"/>
+                            <constraint firstItem="ZIV-UK-4W8" firstAttribute="top" secondItem="wxq-2c-cfG" secondAttribute="top" constant="8" id="n9f-Mh-rma"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wxq-2c-cfG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Energy" id="iVW-aJ-27n"/>
+                    <connections>
+                        <outlet property="lineChartView" destination="ZIV-UK-4W8" id="91R-E5-qXj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFc-Cs-2rE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505" y="1380"/>
+            <point key="canvasLocation" x="504.80000000000001" y="1379.5566502463055"/>
         </scene>
     </scenes>
     <resources>
