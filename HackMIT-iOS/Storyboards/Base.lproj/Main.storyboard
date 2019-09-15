@@ -162,6 +162,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pointsbutton" destination="LRK-kE-9Wx" id="uJk-Hk-JuS"/>
                         <outlet property="tableView" destination="bOA-qR-eAD" id="YyJ-I8-S6j"/>
                         <segue destination="NZU-Hc-gDd" kind="show" identifier="openMap" id="icF-qN-ocE"/>
                         <segue destination="r2B-uv-WpQ" kind="show" identifier="openProfile" id="tcR-TY-La0"/>
@@ -756,6 +757,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qks-Gq-ifV"/>
                     </view>
                     <connections>
                         <outlet property="distanceTextField" destination="UE7-EG-6Wd" id="IQg-Cy-j0M"/>
@@ -775,6 +777,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="335" height="575"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="38J-as-43e"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1x-7a-rAN" userLabel="First Responder" sceneMemberID="firstResponder"/>

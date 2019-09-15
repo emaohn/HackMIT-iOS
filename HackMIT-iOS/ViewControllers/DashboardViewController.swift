@@ -15,6 +15,7 @@ class DashboardViewController: UIViewController {
     var ref: DatabaseReference!
     var userData = [DataSnapshot]()
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pointsbutton: UIButton!
     var driving = false;
     var driveTime = 0;
     let timer = Timer()
@@ -68,6 +69,10 @@ class DashboardViewController: UIViewController {
                 for user in snapshot {
                     self.userData.append(user)
                 }
+                
+                let user = self.userData[0].value as! [String: Any]
+                let points = user["points"] as! Int
+                self.pointsbutton.titleLabel?.text = "\(points)"
                 
                 dispatchGroup.leave()
                 
