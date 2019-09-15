@@ -23,11 +23,21 @@ class AddEnergyViewController: UIViewController {
         retrieveData()
         setup()
         // Do any additional setup after loading the view.
+        hideKeyboardWhenTappedAround()
+        let hideKeyboard = UITapGestureRecognizer(target: self, action: #selector(self.navigationBarTap))
+        hideKeyboard.numberOfTapsRequired = 1
+        navigationController?.navigationBar.addGestureRecognizer(hideKeyboard)
+    }
+    
+    @objc func navigationBarTap(_ recognizer: UIGestureRecognizer) {
+        view.endEditing(true)
+        // OR  USE  yourSearchBarName.endEditing(true)
+        
     }
     
     func setup() {
         segmentedControl.selectedSegmentIndex = 0
-        timeLabel.text = "hours"
+        timeLabel.text = "days"
         amountLabel.text = "kilowatts"
     }
     
@@ -73,7 +83,22 @@ class AddEnergyViewController: UIViewController {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleAddEnergy"), object: nil)
         let user = userData[0].value as! [String: Any]
         let val = user["co2e"] as! Double
-    ref?.child("users/InfantDerrickGnanaSusairaj/co2e").setValue(val + 50)
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            if let time = Double(timeTextField.text!) {
+                ref?.child("users/InfantDerrickGnanaSusairaj/co2e").setValue(val + time * 0.45449955)
+            }
+        case 1:
+            if let time = Double(timeTextField.text!) {
+                ref?.child("users/InfantDerrickGnanaSusairaj/co2e").setValue(val + time * 10.15)
+            }
+        case 2:
+            if let time = Double(timeTextField.text!) {
+                ref?.child("users/InfantDerrickGnanaSusairaj/co2e").setValue(val + time * 5.48)
+            }
+        default: break;
+        }
+    
 
     }
     
@@ -90,4 +115,15 @@ class AddEnergyViewController: UIViewController {
     }
     */
 
+}
+
+extension AddEnergyViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddEnergyViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
