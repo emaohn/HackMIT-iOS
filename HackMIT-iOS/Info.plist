@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>askdhahfquwkaskhkjd</string>
+	<key>Privacy – Health Update Usage Description</key>
+	<string>asdjaskjdhasjfkdjds</string>
+	<key>Privacy – Health Share Usage Description</key>
+	<string>askdjsakdj</string>
+	<key>NSMotionUsageDescription</key>
+	<string>To calculate automotive usage</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To show surrounding reports</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

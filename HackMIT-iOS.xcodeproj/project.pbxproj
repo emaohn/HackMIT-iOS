@@ -17,6 +17,10 @@
 		E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD321232D6D6800992AAB /* MapViewController.swift */; };
 		E84FD324232D6D6E00992AAB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD323232D6D6E00992AAB /* SettingsViewController.swift */; };
 		E84FD326232D6DE100992AAB /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD325232D6DE100992AAB /* ContainerViewController.swift */; };
+		E84FD328232D75D500992AAB /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD327232D75D500992AAB /* SideMenuViewController.swift */; };
+		E84FD32C232DA3AD00992AAB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84FD32B232DA3AD00992AAB /* HealthKit.framework */; };
+		E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD32F232DA3E300992AAB /* UIColor+TC.swift */; };
+		E84FD332232DAD0300992AAB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD331232DAD0300992AAB /* HealthKitSetupAssistant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,11 @@
 		E84FD321232D6D6800992AAB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E84FD323232D6D6E00992AAB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E84FD325232D6DE100992AAB /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		E84FD327232D75D500992AAB /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		E84FD329232DA3AD00992AAB /* HackMIT-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "HackMIT-iOS.entitlements"; sourceTree = "<group>"; };
+		E84FD32B232DA3AD00992AAB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E84FD32F232DA3E300992AAB /* UIColor+TC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+TC.swift"; sourceTree = "<group>"; };
+		E84FD331232DAD0300992AAB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84FD32C232DA3AD00992AAB /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +60,7 @@
 			children = (
 				E84FD300232D47C800992AAB /* HackMIT-iOS */,
 				E84FD2FF232D47C800992AAB /* Products */,
+				E84FD32A232DA3AD00992AAB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +75,7 @@
 		E84FD300232D47C800992AAB /* HackMIT-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E84FD329232DA3AD00992AAB /* HackMIT-iOS.entitlements */,
 				E84FD31A232D54AB00992AAB /* Models */,
 				E84FD319232D54A500992AAB /* Services */,
 				E84FD318232D549200992AAB /* Views */,
@@ -94,6 +106,7 @@
 				E84FD321232D6D6800992AAB /* MapViewController.swift */,
 				E84FD323232D6D6E00992AAB /* SettingsViewController.swift */,
 				E84FD325232D6DE100992AAB /* ContainerViewController.swift */,
+				E84FD327232D75D500992AAB /* SideMenuViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -108,6 +121,8 @@
 		E84FD319232D54A500992AAB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E84FD331232DAD0300992AAB /* HealthKitSetupAssistant.swift */,
+				E84FD32F232DA3E300992AAB /* UIColor+TC.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -117,6 +132,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E84FD32A232DA3AD00992AAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E84FD32B232DA3AD00992AAB /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +174,11 @@
 				TargetAttributes = {
 					E84FD2FD232D47C800992AAB = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -190,10 +218,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84FD328232D75D500992AAB /* SideMenuViewController.swift in Sources */,
 				E84FD30A232D47C800992AAB /* HackMIT_iOS.xcdatamodeld in Sources */,
 				E84FD31E232D6D4D00992AAB /* DashboardViewController.swift in Sources */,
 				E84FD326232D6DE100992AAB /* ContainerViewController.swift in Sources */,
 				E84FD320232D6D5600992AAB /* ProfileViewController.swift in Sources */,
+				E84FD332232DAD0300992AAB /* HealthKitSetupAssistant.swift in Sources */,
+				E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */,
 				E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */,
 				E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */,
 				E84FD324232D6D6E00992AAB /* SettingsViewController.swift in Sources */,
@@ -342,9 +373,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HackMIT-iOS/HackMIT-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 268QRXVK86;
 				INFOPLIST_FILE = "HackMIT-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -360,9 +393,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "HackMIT-iOS/HackMIT-iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 268QRXVK86;
 				INFOPLIST_FILE = "HackMIT-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

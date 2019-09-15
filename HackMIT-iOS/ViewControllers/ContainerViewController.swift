@@ -7,28 +7,36 @@
 //
 
 import UIKit
+import CoreMotion
 
 class ContainerViewController: UIViewController {
-
+    var menuOpen = false
+    
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        leadingConstraint.constant = -275
+        menuOpen = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(toggleSideMenu), name: NSNotification.Name("ToggleSideMenu"), object: nil)
 
         // Do any additional setup after loading the view.
     }
     
-    @objc func sideMenuToggled() {
-        
+    @objc func toggleSideMenu() {
+        if(menuOpen == false) {
+            leadingConstraint.constant = 0
+            menuOpen = true
+        } else {
+            menuOpen = false
+            leadingConstraint.constant = -275
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

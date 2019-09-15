@@ -27,4 +27,7 @@ class ProfileViewController: UIViewController {
     }
     */
 
+    @IBAction func menuButtonToggled(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+    }
 }
