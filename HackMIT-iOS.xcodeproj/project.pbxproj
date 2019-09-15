@@ -21,6 +21,11 @@
 		E84FD32C232DA3AD00992AAB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84FD32B232DA3AD00992AAB /* HealthKit.framework */; };
 		E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD32F232DA3E300992AAB /* UIColor+TC.swift */; };
 		E84FD332232DAD0300992AAB /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD331232DAD0300992AAB /* HealthKitSetupAssistant.swift */; };
+		E84FD334232DC6AE00992AAB /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD333232DC6AE00992AAB /* DashboardTableViewCell.swift */; };
+		E84FD336232DC91C00992AAB /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = E84FD335232DC91C00992AAB /* heart.png */; };
+		E84FD338232DC96300992AAB /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = E84FD337232DC96300992AAB /* light.png */; };
+		E84FD33A232DC99000992AAB /* walk.png in Resources */ = {isa = PBXBuildFile; fileRef = E84FD339232DC99000992AAB /* walk.png */; };
+		E84FD33C232DC9A700992AAB /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = E84FD33B232DC9A700992AAB /* car.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		E84FD32B232DA3AD00992AAB /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E84FD32F232DA3E300992AAB /* UIColor+TC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+TC.swift"; sourceTree = "<group>"; };
 		E84FD331232DAD0300992AAB /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
+		E84FD333232DC6AE00992AAB /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		E84FD335232DC91C00992AAB /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		E84FD337232DC96300992AAB /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
+		E84FD339232DC99000992AAB /* walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk.png; sourceTree = "<group>"; };
+		E84FD33B232DC9A700992AAB /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +92,10 @@
 				E84FD317232D548B00992AAB /* ViewControllers */,
 				E84FD316232D547700992AAB /* Storyboards */,
 				E84FD301232D47C800992AAB /* AppDelegate.swift */,
+				E84FD339232DC99000992AAB /* walk.png */,
+				E84FD33B232DC9A700992AAB /* car.png */,
+				E84FD337232DC96300992AAB /* light.png */,
+				E84FD335232DC91C00992AAB /* heart.png */,
 				E84FD30B232D47C900992AAB /* Assets.xcassets */,
 				E84FD310232D47CA00992AAB /* Info.plist */,
 				E84FD308232D47C800992AAB /* HackMIT_iOS.xcdatamodeld */,
@@ -114,6 +128,7 @@
 		E84FD318232D549200992AAB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E84FD333232DC6AE00992AAB /* DashboardTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,9 +220,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84FD336232DC91C00992AAB /* heart.png in Resources */,
 				E84FD30F232D47C900992AAB /* LaunchScreen.storyboard in Resources */,
 				E84FD30C232D47C900992AAB /* Assets.xcassets in Resources */,
+				E84FD338232DC96300992AAB /* light.png in Resources */,
+				E84FD33C232DC9A700992AAB /* car.png in Resources */,
 				E84FD307232D47C800992AAB /* Main.storyboard in Resources */,
+				E84FD33A232DC99000992AAB /* walk.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +246,7 @@
 				E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */,
 				E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */,
 				E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */,
+				E84FD334232DC6AE00992AAB /* DashboardTableViewCell.swift in Sources */,
 				E84FD324232D6D6E00992AAB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

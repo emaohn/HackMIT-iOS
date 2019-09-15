@@ -12,6 +12,7 @@ import HealthKit
 
 class DashboardViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var statusLabel: UILabel!
     var driving = false;
     var driveTime = 0;
@@ -47,12 +48,18 @@ class DashboardViewController: UIViewController {
             }
         }
         
+        //totalDistance()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
     }
     
+    func totalDistance() {
+        getDistance { (result) in
+            print(result)
+        }
+    }
     func getDistance(completion: @escaping (Double) -> Void) {
         let healthStore = HKHealthStore()
         
@@ -119,24 +126,6 @@ class DashboardViewController: UIViewController {
         }
 
     }
-
-//    func getTodaysDistance(completion: @escaping (Double) -> Void) {
-//        let stepsQuantityType = HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-//
-//        let now = Date()
-//        let startOfDay = Calendar.current.startOfDay(for: now)
-//        let predicate = HKQuery.predicateForSamples(withStart: startOfDay, end: now, options: .strictStartDate)
-//
-//        let query = HKStatisticsQuery(quantityType: stepsQuantityType, quantitySamplePredicate: predicate, options: .cumulativeSum) { _, result, _ in
-//            guard let result = result, let sum = result.sumQuantity() else {
-//                completion(0.0)
-//                return
-//            }
-//            completion(sum.doubleValue(for: HKUnit.count()))
-//        }
-//
-//        healthStore.execute(query)
-//    }
     
     @IBAction func menuToggled(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
@@ -172,4 +161,35 @@ class DashboardViewController: UIViewController {
     }
     */
 
+}
+
+extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "dashCell") as! DashboardTableViewCell
+        switch indexPath.row {
+        case 0:
+            cell.iconImageView.image = UIImage(named: "light.png")
+            cell.label.text = "0.56 Ibs of CO2 / kW"
+        case 1:
+            cell.iconImageView.image = UIImage(named: "car.png")
+            cell.label.text = "0.56 Ibs of CO2 / mi"
+        case 2:
+            cell.iconImageView.image = UIImage(named: "walk.png")
+            cell.label.text = "3.5 miles"
+        case 3:
+            cell.iconImageView.image = UIImage(named: "heart.png")
+            cell.label.text = "3 hours"
+        default: break
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
 }
