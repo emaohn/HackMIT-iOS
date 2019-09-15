@@ -423,11 +423,23 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzY-Jf-3Zb">
+                                <rect key="frame" x="20" y="883" width="335" height="575"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="575" id="NuI-Pf-LTy"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="iAu-CE-lY6" kind="embed" id="7Mc-Di-wpO"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="euh-Tg-iJZ" firstAttribute="top" secondItem="yME-Az-zZC" secondAttribute="top" constant="20" id="8xu-QK-fra"/>
+                            <constraint firstItem="yME-Az-zZC" firstAttribute="trailing" secondItem="jzY-Jf-3Zb" secondAttribute="trailing" constant="20" id="HRN-a0-7SC"/>
+                            <constraint firstItem="yME-Az-zZC" firstAttribute="bottom" secondItem="jzY-Jf-3Zb" secondAttribute="bottom" constant="-700" id="WyO-F7-EwY"/>
                             <constraint firstItem="yME-Az-zZC" firstAttribute="trailing" secondItem="euh-Tg-iJZ" secondAttribute="trailing" constant="20" id="YLl-IU-GHL"/>
+                            <constraint firstItem="jzY-Jf-3Zb" firstAttribute="leading" secondItem="yME-Az-zZC" secondAttribute="leading" constant="20" id="q90-Eo-paK"/>
                             <constraint firstItem="euh-Tg-iJZ" firstAttribute="leading" secondItem="yME-Az-zZC" secondAttribute="leading" constant="20" id="ro6-Xk-9GY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yME-Az-zZC"/>
@@ -473,20 +485,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyf-ly-4Sx">
+                                <rect key="frame" x="20" y="883" width="335" height="575"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="575" id="aVs-F5-wzb"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="FB5-gs-lvs" kind="embed" id="D3r-sR-ODt"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xyf-ly-4Sx" firstAttribute="leading" secondItem="Gkc-tX-yxk" secondAttribute="leading" constant="20" id="9y6-X0-PrO"/>
                             <constraint firstItem="m6t-hg-Xak" firstAttribute="leading" secondItem="Gkc-tX-yxk" secondAttribute="leading" constant="20" id="IBc-x9-Cei"/>
                             <constraint firstItem="m6t-hg-Xak" firstAttribute="top" secondItem="Gkc-tX-yxk" secondAttribute="top" constant="20" id="Jbs-2J-Ljv"/>
+                            <constraint firstItem="Gkc-tX-yxk" firstAttribute="trailing" secondItem="Xyf-ly-4Sx" secondAttribute="trailing" constant="20" id="KZV-m1-MBf"/>
                             <constraint firstItem="Gkc-tX-yxk" firstAttribute="trailing" secondItem="m6t-hg-Xak" secondAttribute="trailing" constant="20" id="Z55-g0-MLm"/>
+                            <constraint firstItem="Gkc-tX-yxk" firstAttribute="bottom" secondItem="Xyf-ly-4Sx" secondAttribute="bottom" constant="-700" id="ueJ-0o-U7m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gkc-tX-yxk"/>
                     </view>
                     <navigationItem key="navigationItem" title="Travel" id="eln-TU-560">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-plus" id="DeB-Ik-NI2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-plus" id="DeB-Ik-NI2">
+                            <connections>
+                                <action selector="addTravelToggled:" destination="eUU-Mw-w0j" id="Y7r-aQ-kfK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="lineChartView" destination="m6t-hg-Xak" id="2jn-Id-2vd"/>
+                        <outlet property="trailingContraint" destination="ueJ-0o-U7m" id="P1c-W6-2AG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAG-ez-57d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -655,6 +684,7 @@
                             <constraint firstItem="em4-XK-LIw" firstAttribute="top" secondItem="7z6-mC-GSg" secondAttribute="bottom" constant="75" id="lWi-UX-bya"/>
                             <constraint firstAttribute="trailing" secondItem="em4-XK-LIw" secondAttribute="trailing" constant="15" id="sbW-IJ-fjF"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6bt-hF-rxb"/>
                     </view>
                     <connections>
                         <outlet property="amountLabel" destination="fay-MV-dPp" id="vNm-wd-7vA"/>
@@ -667,6 +697,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfa-gB-5hf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="536.79999999999995" y="2072.2906403940888"/>
+        </scene>
+        <!--Add Travel View Controller-->
+        <scene sceneID="48n-Va-giy">
+            <objects>
+                <viewController id="FB5-gs-lvs" customClass="AddTravelViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NO1-zY-aOs">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="575"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="imA-qg-XmW">
+                                <rect key="frame" x="26" y="58" width="285" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Car"/>
+                                    <segment title="Bus"/>
+                                    <segment title="Train"/>
+                                    <segment title="Airplane"/>
+                                </segments>
+                                <color key="tintColor" red="0.066666666666666666" green="0.80392156862745101" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="segmentedControlToggled:" destination="FB5-gs-lvs" eventType="valueChanged" id="PYo-8h-LLJ"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Distance traveled (mi)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UE7-EG-6Wd">
+                                <rect key="frame" x="26" y="160" width="285" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Miles per gallon" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LbO-8c-3ve">
+                                <rect key="frame" x="26" y="233" width="285" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cX-he-1be">
+                                <rect key="frame" x="278" y="524" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" red="0.066666666666666666" green="0.80392156862745101" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonPressed:" destination="FB5-gs-lvs" eventType="touchUpInside" id="nob-NZ-ruV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2u-kM-aS7">
+                                <rect key="frame" x="15" y="524" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.066666666666666666" green="0.80392156862745101" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="FB5-gs-lvs" eventType="touchUpInside" id="ylS-8q-rdm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="distanceTextField" destination="UE7-EG-6Wd" id="IQg-Cy-j0M"/>
+                        <outlet property="mpgTextField" destination="LbO-8c-3ve" id="PtX-Y7-AdI"/>
+                        <outlet property="segmentedControl" destination="imA-qg-XmW" id="gUe-SE-yIe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbe-aA-uUR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="1985.8374384236454"/>
+        </scene>
+        <!--Add Volunteering View Controller-->
+        <scene sceneID="ihp-SH-Uhf">
+            <objects>
+                <viewController id="iAu-CE-lY6" customClass="AddVolunteeringViewController" customModule="HackMIT_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uiF-Bn-hwd">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="575"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D1x-7a-rAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

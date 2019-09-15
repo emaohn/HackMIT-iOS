@@ -33,6 +33,8 @@
 		E84FD347232E168C00992AAB /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD346232E168C00992AAB /* PointsViewController.swift */; };
 		E84FD34B232E25C400992AAB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E84FD34A232E25C400992AAB /* GoogleService-Info.plist */; };
 		E84FD34D232E3D4200992AAB /* AddEnergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD34C232E3D4200992AAB /* AddEnergyViewController.swift */; };
+		E8DA98E2232E4C56006F3B0D /* AddTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA98E1232E4C56006F3B0D /* AddTravelViewController.swift */; };
+		E8DA98E4232E4C61006F3B0D /* AddVolunteeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA98E3232E4C61006F3B0D /* AddVolunteeringViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		E84FD346232E168C00992AAB /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
 		E84FD34A232E25C400992AAB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E84FD34C232E3D4200992AAB /* AddEnergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEnergyViewController.swift; sourceTree = "<group>"; };
+		E8DA98E1232E4C56006F3B0D /* AddTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTravelViewController.swift; sourceTree = "<group>"; };
+		E8DA98E3232E4C61006F3B0D /* AddVolunteeringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVolunteeringViewController.swift; sourceTree = "<group>"; };
 		FE8F2019CC99C7A482787186 /* Pods_HackMIT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackMIT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,8 @@
 				E84FD342232DE80A00992AAB /* EnergyViewController.swift */,
 				E84FD346232E168C00992AAB /* PointsViewController.swift */,
 				E84FD34C232E3D4200992AAB /* AddEnergyViewController.swift */,
+				E8DA98E1232E4C56006F3B0D /* AddTravelViewController.swift */,
+				E8DA98E3232E4C61006F3B0D /* AddVolunteeringViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -349,10 +355,12 @@
 				E84FD326232D6DE100992AAB /* ContainerViewController.swift in Sources */,
 				E84FD341232DE80000992AAB /* TravelViewController.swift in Sources */,
 				E84FD320232D6D5600992AAB /* ProfileViewController.swift in Sources */,
+				E8DA98E4232E4C61006F3B0D /* AddVolunteeringViewController.swift in Sources */,
 				E84FD332232DAD0300992AAB /* HealthKitSetupAssistant.swift in Sources */,
 				E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */,
 				E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */,
 				E84FD33F232DE7F300992AAB /* VolunteeringViewController.swift in Sources */,
+				E8DA98E2232E4C56006F3B0D /* AddTravelViewController.swift in Sources */,
 				E84FD34D232E3D4200992AAB /* AddEnergyViewController.swift in Sources */,
 				E84FD347232E168C00992AAB /* PointsViewController.swift in Sources */,
 				E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */,

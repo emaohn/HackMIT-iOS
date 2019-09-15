@@ -10,9 +10,10 @@ import UIKit
 import CoreMotion
 import HealthKit
 import Charts
-
+import FirebaseDatabase
 class DashboardViewController: UIViewController {
-
+    var ref: DatabaseReference!
+    var userData = [DataSnapshot]()
     @IBOutlet weak var tableView: UITableView!
     var driving = false;
     var driveTime = 0;
@@ -23,7 +24,8 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         authorizeHealthKit()
-        
+        ref = Database.database().reference()
+        retrieveData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(openProfile), name: NSNotification.Name("OpenProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(openMap), name: NSNotification.Name("OpenMap"), object: nil)
@@ -47,16 +49,42 @@ class DashboardViewController: UIViewController {
             }
         }
         
-        //totalDistance()
+        totalDistance()
+  
+    }
+    
+    func retrieveData() {
+        let dataRef = Database.database().reference().child("users")
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        
+        DispatchQueue.main.async {
+            dataRef.observeSingleEvent(of: .value) { (snapshot) in
+                
+                guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {return }
+                
+                //self.user = [DataSnapshot]()
+                
+                for user in snapshot {
+                    self.userData.append(user)
+                }
+                
+                dispatchGroup.leave()
+                
+            }
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        tableView.reloadData()
     }
     
     func totalDistance() {
         getDistance { (result) in
-            print(result)
+            self.walkingDistance = result / 1000
+            self.ref?.child("users/InfantDerrickGnanaSusairaj/ecoDist").setValue(self.walkingDistance)
+            self.tableView.reloadData()
         }
     }
     func getDistance(completion: @escaping (Double) -> Void) {
@@ -80,7 +108,8 @@ class DashboardViewController: UIViewController {
                 
                 if let sum = statistics.sumQuantity() {
                     // Get steps (they are of double type)
-                    resultCount = sum.doubleValue(for: HKUnit.count())
+                    resultCount = sum.doubleValue(for: HKUnit.meter())
+                    
                 } // end if
                 
                 // Return
@@ -97,7 +126,7 @@ class DashboardViewController: UIViewController {
                 let resultCount = sum.doubleValue(for: HKUnit.count())
                 // Return
                 DispatchQueue.main.async {
-                    self.walkingDistance = resultCount
+                   
                     completion(resultCount)
                 }
             } // end if
@@ -149,16 +178,6 @@ class DashboardViewController: UIViewController {
     @IBAction func unwindWithSegue(_ segue: UIStoryboardSegue) {
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -178,7 +197,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             cell.label.text = "0.56 Ibs of CO2 / mi"
         case 2:
             cell.iconImageView.image = UIImage(named: "walk.png")
-            cell.label.text = "3.5 miles"
+            let distance = String(format: "%.2f", walkingDistance)
+            cell.label.text = "\(distance) km"
         case 3:
             cell.iconImageView.image = UIImage(named: "heart.png")
             cell.label.text = "3 hours"

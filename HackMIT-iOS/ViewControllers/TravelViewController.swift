@@ -16,13 +16,16 @@ private class CubicLineSampleFillFormatter: IFillFormatter {
 }
 
 class TravelViewController: UIViewController {
-
+    @IBOutlet weak var trailingContraint: NSLayoutConstraint!
+    
     @IBOutlet weak var lineChartView: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       NotificationCenter.default.addObserver(self, selector: #selector(addTravelToggled), name: NSNotification.Name("AddTravelToggled"), object: nil)
         
         
+        trailingContraint.constant = -700
         lineChartView.backgroundColor = .white
         
         lineChartView.dragEnabled = true
@@ -49,7 +52,7 @@ class TravelViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UINavigationBar.appearance().tintColor = UIColor.tcOrange
-        
+        trailingContraint.constant = -700
     }
     
     func setChartValues() {
@@ -81,5 +84,15 @@ class TravelViewController: UIViewController {
     
     func updateChartData() {
         
+    }
+    @IBAction func addTravelToggled(_ sender: Any) {
+        if (trailingContraint.constant == -700) {
+            trailingContraint.constant = 20
+        } else {
+            trailingContraint.constant = -700
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
     }
 }
