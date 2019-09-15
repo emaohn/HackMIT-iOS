@@ -21,20 +21,21 @@ class EnergyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lineChartView.setViewPortOffsets(left: 0, top: 20, right: 0, bottom: 0)
+        
         lineChartView.backgroundColor = .white
         
-        lineChartView.dragEnabled = false
+        lineChartView.dragEnabled = true
         lineChartView.setScaleEnabled(false)
-        lineChartView.pinchZoomEnabled = false
+        lineChartView.pinchZoomEnabled = true
         
         let yAxis = lineChartView.leftAxis
         yAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size:12)!
         yAxis.setLabelCount(6, force: false)
-        yAxis.labelTextColor = .white
-        yAxis.labelPosition = .insideChart
-        yAxis.axisLineColor = .white
+        yAxis.labelTextColor = .black
+        yAxis.labelPosition = .outsideChart
+        yAxis.axisLineColor = .black
         
+        lineChartView.drawGridBackgroundEnabled = false;
         lineChartView.rightAxis.enabled = false
         lineChartView.legend.enabled = false
         
@@ -44,8 +45,14 @@ class EnergyViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UINavigationBar.appearance().tintColor = UIColor.tcOrange
+
+    }
+    
     func setChartValues() {
-        let yVals1 = (0..<7).map { (i) -> ChartDataEntry in
+        let yVals1 = (1..<8).map { (i) -> ChartDataEntry in
             let mult = 70 + 1
             let val = Double(arc4random_uniform(UInt32(mult)) + 20)
             return ChartDataEntry(x: Double(i), y: val)
@@ -54,11 +61,12 @@ class EnergyViewController: UIViewController {
         let set1 = LineChartDataSet(values: yVals1, label: "Energy")
         set1.mode = .cubicBezier
         set1.drawCirclesEnabled = false
-        set1.lineWidth = 4
+        set1.lineWidth = 5
         set1.circleRadius = 4
         set1.setCircleColor(.white)
-        set1.highlightColor = UIColor(red: 251, green: 99, blue: 64, alpha: 1)
-        set1.fillColor = .black
+        set1.highlightColor = .black
+        set1.fillColor = .orange
+        set1.setColors(.orange)
         set1.fillAlpha = 1
         set1.drawHorizontalHighlightIndicatorEnabled = false
         set1.fillFormatter = CubicLineSampleFillFormatter()
@@ -68,5 +76,9 @@ class EnergyViewController: UIViewController {
         data.setDrawValues(false)
         
         lineChartView.data = data
+    }
+    
+    func updateChartData() {
+        
     }
 }

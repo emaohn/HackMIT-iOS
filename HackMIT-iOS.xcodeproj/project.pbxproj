@@ -30,6 +30,7 @@
 		E84FD33F232DE7F300992AAB /* VolunteeringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD33E232DE7F300992AAB /* VolunteeringViewController.swift */; };
 		E84FD341232DE80000992AAB /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD340232DE80000992AAB /* TravelViewController.swift */; };
 		E84FD343232DE80A00992AAB /* EnergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD342232DE80A00992AAB /* EnergyViewController.swift */; };
+		E84FD347232E168C00992AAB /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84FD346232E168C00992AAB /* PointsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		E84FD33E232DE7F300992AAB /* VolunteeringViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolunteeringViewController.swift; sourceTree = "<group>"; };
 		E84FD340232DE80000992AAB /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		E84FD342232DE80A00992AAB /* EnergyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyViewController.swift; sourceTree = "<group>"; };
+		E84FD346232E168C00992AAB /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
 		FE8F2019CC99C7A482787186 /* Pods_HackMIT_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackMIT_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				E84FD33E232DE7F300992AAB /* VolunteeringViewController.swift */,
 				E84FD340232DE80000992AAB /* TravelViewController.swift */,
 				E84FD342232DE80A00992AAB /* EnergyViewController.swift */,
+				E84FD346232E168C00992AAB /* PointsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				E84FD330232DA3E300992AAB /* UIColor+TC.swift in Sources */,
 				E84FD322232D6D6800992AAB /* MapViewController.swift in Sources */,
 				E84FD33F232DE7F300992AAB /* VolunteeringViewController.swift in Sources */,
+				E84FD347232E168C00992AAB /* PointsViewController.swift in Sources */,
 				E84FD302232D47C800992AAB /* AppDelegate.swift in Sources */,
 				E84FD334232DC6AE00992AAB /* DashboardTableViewCell.swift in Sources */,
 				E84FD343232DE80A00992AAB /* EnergyViewController.swift in Sources */,

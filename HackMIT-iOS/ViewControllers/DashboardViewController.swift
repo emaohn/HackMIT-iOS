@@ -30,7 +30,7 @@ class DashboardViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(openSettings), name: NSNotification.Name("OpenSettings"), object: nil)
         
         
-        //statusLabel.text = "\(driveTime)"
+       
         
         
         let motionActivityManager = CMMotionActivityManager()
@@ -195,7 +195,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0: self.performSegue(withIdentifier: "openEnergyBreakdown", sender: nil)
         case 1: self.performSegue(withIdentifier: "openTravelBreakdown", sender: nil)
-        case 2: self.performSegue(withIdentifier: "openVolunteeringBreakdown", sender: nil)
+        case 3: self.performSegue(withIdentifier: "openVolunteeringBreakdown", sender: nil)
         default: break;
         }
     }
