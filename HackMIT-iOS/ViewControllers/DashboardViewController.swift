@@ -16,6 +16,7 @@ class DashboardViewController: UIViewController {
     var userData = [DataSnapshot]()
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var pointsbutton: UIButton!
+    var dataRetrieved = false
     var driving = false;
     var driveTime = 0;
     let timer = Timer()
@@ -75,6 +76,8 @@ class DashboardViewController: UIViewController {
                 self.pointsbutton.titleLabel?.text = "\(points)"
                 
                 dispatchGroup.leave()
+                self.dataRetrieved = true
+                self.tableView.reloadData()
                 
             }
         }
@@ -188,16 +191,21 @@ class DashboardViewController: UIViewController {
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if(dataRetrieved) {
+            return 5
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dashCell") as! DashboardTableViewCell
+        var user = userData[0].value as! [String:Any]
         switch indexPath.row {
         case 0:
             cell.iconImageView.image = UIImage(named: "light.png")
             cell.label.text = "0.56 Ibs of CO2 / kW"
         case 1:
+            //user["co2]
             cell.iconImageView.image = UIImage(named: "car.png")
             cell.label.text = "0.56 Ibs of CO2 / mi"
         case 2:
